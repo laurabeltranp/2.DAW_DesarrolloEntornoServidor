@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1> Alta de Evento</h1>
+	<form th:action="@{/eventos/alta}" method="post">
+	
+		<p><input type="text" name="nombre"></p>
+		<p><input type="text" name="descripcion"></p>
+		<p><input type="text" name="duracion"></p>
+		<p><input type="text" name="precio"></p>
+		<p><input type="date" name="fecha"></p>
+		<p><input type="text" name="estado"></p>
+		<p><input type="text" name="aforo"></p>
+		
+		<p><input type="submit" value="Enviar"></p>
+		
+	</form>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>Formulario para crear nuevo evento</h1>
+	
+	<form th:action="@{/eventos/alta}" method="post">
+		
+		<input type="text" name="nombre">Nombre
+		<input type="text" name="descripcion"> Descripcion
+		<input type="text" name="precio"> Precio
+		<input type="text" name="duracion"> Duración
+		<input type="date" name="fecha"> Fecha
+		<input type="text" name="estado"> Estado
+		<input type="text" name="aforo"> Aforo
+		
+		<input type="submit" value="Enviar">
+		
+	</form>
+
+</body>
+</html>

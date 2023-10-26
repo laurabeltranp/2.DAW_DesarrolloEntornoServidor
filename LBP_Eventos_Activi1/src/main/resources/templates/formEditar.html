@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>Formulario de cambio de evento</h1>
+	
+	<form th:action="@{/eventos/editar/{id}(id=${evento.idEvento})}" th:object="${evento}" method="post">
+		
+		<input type="text" name="nombre" th:value="${evento.nombre}">
+		<p><input type="text" th:field="*{descripcion}"></p>
+		<p><input type="text" th:field="*{precio}"></p>
+		<p><input type="text" th:field="*{duracion}"></p>
+		<p><input type="date" th:field="*{fecha}"></p>
+		<p><input type="text" th:field="*{estado}"></p>
+		<p><input type="text" th:field="*{aforo}"></p>
+		
+		<input type="submit" value="Enviar">
+		
+	</form>
+
+</body>
+</html>

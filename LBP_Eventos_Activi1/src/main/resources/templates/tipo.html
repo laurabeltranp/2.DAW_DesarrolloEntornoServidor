@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Actividad1.-  Eventos</title>
+</head>
+<body>
+
+	<h1>Listado de Eventos Activos</h1>
+	<a th:href="@{/eventos/alta}" style="border: 2px solid #8DD9F3; padding: 5px;">Nuevo Evento</a>
+	
+
+	<table width=100%>
+		<tr style="background-color: #8DD9F3">
+			<th>ID</th>
+			<th>Nombre</th>
+		</tr>
+		
+		<tr th:each="tipo : ${tipos}">
+			<td th:text="${tipo.idTipo}"></td>
+			<td th:text="${tipo.nombre}"></td>
+		</tr>
+		
+	</table>
+	
+<!--
+	<table width=90%>
+		<tr style="background-color: #A783EE">
+			<th>Ver Detalle</th>
+			<th>Eliminar</th>
+			<th>Editar</th>		
+		</tr>
+		<tr th:each="evento : ${evento}">
+			<td><a th:href="@{/evento/detalle/{id}(id=${evento.idTipo})}">Detalle</a></td>
+			<td><a th:href="@{/evento/eliminar/{id}(id=${evento.idTipo})}">Eliminar</a></td>
+			<td><a th:href="@{/evento/editar/{id}(id=${evento.idTipo})}">Editar</a></td>
+		</tr>
+	</table>
+	-->
+			
+</body>
+</html> 

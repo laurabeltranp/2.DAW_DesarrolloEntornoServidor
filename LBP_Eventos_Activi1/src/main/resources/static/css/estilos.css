@@ -1,0 +1,37 @@
+.nav{
+    background-color: #A9F5F2;
+    height: 60px;
+    width: 100%;
+}
+
+nav ul{
+    margin-right: 40px;
+}
+nav ul li{
+    display: inline-block;
+    line-height: 60px;
+    margin: 5px 5px;
+}
+nav ul li a{
+    color: black;
+    font-size: 15px;
+    padding: 7px 13px;
+    border-radius: 3px;
+    text-decoration: upperCase;
+}
+li a.active, li a:hover{
+    background-color: white;
+}
+
+#tablas{
+	margin-top: 10px;
+	display: flex; 
+	justify-content: space-between;
+}
+h1{
+	margin-bottom: 10px;
+	
+}
+a{
+	text-decoration: none;
+}
