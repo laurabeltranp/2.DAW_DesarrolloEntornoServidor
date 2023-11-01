@@ -28,8 +28,7 @@ public class EventoController {
 	@Qualifier("evento")
 	@Autowired
 	private EventoDao edao;
-	@Autowired
-	private TipoDao tdao;
+
 	@GetMapping("/editar/{id}")
 	public String editarEvento(@PathVariable("id") int idEvento, Model model) {
 		
@@ -44,11 +43,20 @@ public class EventoController {
 		}
 		
 	}
+	/**
+	 * Con este método procedemos a editar los campos de un evento y que queden registrados correctamente edao lo utilizamos para usar la implementacion del interface
+	 * @param evento clase que corresponde al javabean
+	 * @param idEvento atributo de la clase evento 
+	 * @param ratt
+	 * @return retornamos la lista actualizada
+	 */
 	
 	@PostMapping("/editar/{id}")
 	public String procEditarEvento(Evento evento, @PathVariable("id") int idEvento, 
 			RedirectAttributes ratt) {
-		evento.setIdEvento(idEvento);
+		System.out.println("procEditarEvento()");
+			System.out.println(evento.getIdEvento());
+		//evento.setIdEvento(idEvento);
 		if (edao.updateOne(evento) == 1)
 			ratt.addFlashAttribute("mensaje", "Modificación realizada");
 		else
@@ -57,10 +65,17 @@ public class EventoController {
 		
 		return "redirect:/";
 	}
-
+/**
+ * Metodo para realizar alta de evento y procesarlo
+ * IMPORTANTE: puede que al dar de alta el primer alta de un error, volviendo a la pagina principal saldrá, el segundo alta debería funcionar sin problemas.
+ * @param evento
+ * @param ratt
+ * @return si el evento se da de alta correctamente te redigirá a la pagina principal sino dará error
+ */
 	@PostMapping("/alta")
 	public String proFormEvento(Evento evento, RedirectAttributes ratt) {
-		evento.setFecha(new Date());
+		System.out.println("dando alta nueva");
+		// actualizar evento.setFecha(new Date());
 		if (edao.insert(evento) == 1) {
 			ratt.addFlashAttribute("mensaje", "Alta de evento realizada");
 			System.out.println(evento);
@@ -76,7 +91,12 @@ public class EventoController {
 		return "formAlta";
 	}
 	
-
+/**
+ * Con este método tratamos de ver en detalle un evento en concreto, buscandolo por un id que tenga asignado
+ * @param idEvento metodo de identificación de un evento que tenemos declarados en una lista que es cargarLista en EventosDaoImpl
+ * @param model
+ * @return devuelve la lista del detalle del evento que deseamos, si no existe no saldrá
+ */
 	@GetMapping("/detalle/{id}")
 	public String verEvento(@PathVariable("id") int idEvento, Model model) {
 		
@@ -103,7 +123,11 @@ public class EventoController {
 		return "forward:/";
 		
 	}
-	
+	/**
+	 * Método para cancelar o cambiar el estado de un vento a cancelado para ello necesitamos el metodo correspondiente del daoImpl y el id del que tenemos que actualizar
+	 * @param id
+	 * @return una vez cancelado lo podremos ver por consola o en la pagina principal si le damos a detalle
+	 */
 	 @GetMapping("/cancelar/{id}")
 	    public String cancelarEvento(@PathVariable int id) {
 	        edao.cancelarEvento(id);

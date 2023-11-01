@@ -6,7 +6,6 @@
 <title>Actividad1.-  Eventos</title>
 </head>
 <body>
-	<h1>Hola eventos </h>
 	<h1>Listado de Eventos Activos</h1>
 	<a th:href="@{/eventos/alta}" style="border: 2px solid #8DD9F3; padding: 5px;">Nuevo Evento</a>
 	
@@ -35,25 +34,11 @@
 			<td th:text="${evento.aforo}"></td>
 			<td th:text="${evento.fecha}"></td>
 			<td th:text="${#dates.format(evento.fecha, 'dd - MM - yyyy')}"></td>
-			<td th:text="${evento.tipo.idTipo}"></td>
+			<!--<td th:text="${evento.tipo.idTipo}"></td> -->
 		</tr>
 		
 	</table>
 	
-<!--
-	<table width=90%>
-		<tr style="background-color: #A783EE">
-			<th>Ver Detalle</th>
-			<th>Eliminar</th>
-			<th>Editar</th>		
-		</tr>
-		<tr th:each="evento : ${evento}">
-			<td><a th:href="@{/evento/detalle/{id}(id=${evento.idTipo})}">Detalle</a></td>
-			<td><a th:href="@{/evento/eliminar/{id}(id=${evento.idTipo})}">Eliminar</a></td>
-			<td><a th:href="@{/evento/editar/{id}(id=${evento.idTipo})}">Editar</a></td>
-		</tr>
-	</table>
-	-->
 			
 </body>
 </html> 

@@ -2,11 +2,24 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8">
+<link rel="stylesheet" type="text/css" href="/css/alta.css">
 <title>Insert title here</title>
 </head>
 <body>
+	<nav class="nav">
+            <ul>
+                <li><a href="tipo.html">Tipos</a></li>
+                <li><a href="eventos.html">Eventos</a></li>
+                <li><a href="usuarios.html">Usuarios</a></li>
+                <li><a href="home.html">Eventos/tipo</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="registro.html">Registro</a></li>
+                <li><a href="salir.html">Salir</a></li>
+            </ul> 
+        </nav>
 	<h1>Formulario para crear nuevo evento</h1>
 	
+	<div class="center-form">
 	<form th:action="@{/eventos/alta}" method="post">
 		
 		<input type="text" name="nombre">Nombre

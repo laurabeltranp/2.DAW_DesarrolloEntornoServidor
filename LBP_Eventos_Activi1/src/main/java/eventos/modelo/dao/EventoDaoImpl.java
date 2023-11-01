@@ -1,6 +1,7 @@
 package eventos.modelo.dao;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,15 +31,16 @@ public class EventoDaoImpl implements EventoDao {
 	}
 	
 	private void cargarLista() {
-		lista.add(new Evento(01, "Graduacion", "Bachillerato Guadalupe", null, 200, 1000, "ACTIVO", 150, tipoEvento.findById(1)));
-		lista.add(new Evento(02,"Cumpleaños", "Cumpleaños Tomasín", null, 120, 100, "ACTIVO", 200, tipoEvento.findById(2)));
-		lista.add(new Evento(03,"Boda", "Boda Camilo Sexto", null, 300, 10000, "ACTIVO", 200, tipoEvento.findById(3)));
+		lista.add(new Evento(01, "Graduacion", "Bachillerato Guadalupe", new Date(), 200, 1000, "ACTIVO", 150, tipoEvento.findById(1)));
+		lista.add(new Evento(02,"Cumpleaños", "Cumpleaños Tomasín", new Date(), 120, 100, "ACTIVO", 200, tipoEvento.findById(2)));
+		lista.add(new Evento(03,"Boda", "Boda Camilo Sexto", new Date(), 300, 10000, "ACTIVO", 200, tipoEvento.findById(3)));
 		idAuto = 3;
 		
 	}
 	
 	@Override
 	public int insert(Evento evento) {
+		System.out.println("insertando nuevo evento");
 		if (!lista.contains(evento)) {
 			evento.setIdEvento(++idAuto);
 			lista.add(evento);
@@ -60,6 +62,7 @@ public class EventoDaoImpl implements EventoDao {
 	@Override
 	public int updateOne(Evento evento) {
 		int pos = lista.indexOf(evento);
+		System.out.println("actualizando posicion: " + pos);
 		if (pos == -1)
 			return 0;
 		lista.set(pos, evento);

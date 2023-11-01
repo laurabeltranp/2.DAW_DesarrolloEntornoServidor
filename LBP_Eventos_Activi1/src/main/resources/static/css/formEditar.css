@@ -1,0 +1,51 @@
+.nav{
+    background-color: #A9F5F2;
+    height: 60px;
+    width: 100%;
+}
+
+nav ul{
+    margin-right: 40px;
+}
+nav ul li{
+    display: inline-block;
+    line-height: 60px;
+    margin: 5px 5px;
+}
+nav ul li a{
+    color: black;
+    font-size: 15px;
+    padding: 7px 13px;
+    border-radius: 3px;
+    text-decoration: upperCase;
+}
+li a.active, li a:hover{
+    background-color: white;
+} 
+
+.form {
+    max-width: 400px; /* Ancho máximo del formulario */
+    margin: 0 auto; /* Centra horizontalmente el formulario */
+    padding: 20px; /* Añade espacio interno al formulario */
+    background-color: #3498db; /* Fondo de color azul */
+    color: #fff; /* Color del texto en el formulario (blanco) */
+    border-radius: 5px; /* Borde redondeado */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Sombra */
+}
+
+.form-group {
+    margin-bottom: 10px; /* Espacio entre grupos de campos */
+}
+
+.form-control {
+    background-color: #ecf0f1; /* Color de fondo de los campos de entrada */
+    color: #333; /* Color del texto en los campos de entrada */
+    border: none; /* Borde del campo de entrada */
+    border-radius: 5px; /* Borde redondeado para los campos de entrada */
+}
+
+.btn-primary {
+    background-color: #3498db; /* Color de fondo del botón "Enviar" */
+    border: none; /* Borde del botón "Enviar" */
+    border-radius: 5px; /* Borde redondeado para el botón "Enviar" */
+}

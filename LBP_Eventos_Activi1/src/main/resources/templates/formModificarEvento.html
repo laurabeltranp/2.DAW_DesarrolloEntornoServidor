@@ -8,13 +8,13 @@
 	<h1> Cambiar datos del Evento</h1>
 
 		<form th:action="@{/eventos/editar/{id}(id=${evento.idEvento})}" th:object="${evento}" method="post">
-		<p><input type="text" name="nombre" th:value="${evento.nombre}"></p>
-		<p><input type="text" th:field="*{descripcion}"></p>
-		<p><input type="date" th:field="*{fecha}"></p>
-		<p><input type="text" th:field="*{duracion}"></p>
-		<p><input type="text" th:field="*{precio}"></p>
-		<p><input type="text" th:field="*{estado}"></p>
-		<p><input type="text" th:field="*{aforo}"></p>
+		<p><input type="text" name="nombre" th:value="${evento.nombre}"></p>Nombre
+		<p><input type="text" th:field="*{descripcion}"></p>Descripcion
+		<p><input type="date" th:field="*{fecha}"></p>Fecha
+		<p><input type="text" th:field="*{duracion}"></p>Duración
+		<p><input type="text" th:field="*{precio}"></p>Precio
+		<p><input type="text" th:field="*{estado}"></p>Estado
+		<p><input type="text" th:field="*{aforo}"></p>Aforo
 		
 		<p><input type="submit" value="Enviar"></p>
 		
