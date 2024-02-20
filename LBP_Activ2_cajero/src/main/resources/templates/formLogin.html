@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>Aplicacion de Cajero</h1>
+	<h3>Formulario de inicio de Sesion</h3>
+	
+	<h4 th:txt="${mensaje}"></h4>
+	<form th:action="@{/login}" method="post">
+	
+		<p><input type="text" name="idCuenta"></p>
+		
+		<p><input type="submit" value="Enviar"></p>
+		
+	</form>
+</body>
+</html>

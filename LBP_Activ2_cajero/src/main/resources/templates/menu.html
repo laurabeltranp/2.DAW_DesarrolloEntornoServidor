@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Menú cuenta</title>
+</head>
+<body>
+<h1>Bienvenido a su cajero</h1>
+	<h3><span th:text="${mensaje}"></span></h3>
+	<h3>Cuenta del cliente: <span th:text="${session.cuenta}"></span></h3>
+	<h3>Saldo diponible: <span th:text="${saldo}"></span></h3>
+
+	<h2>Seleccione la operación que quiere realizar:</h2>
+	<a th:href="@{/ingresar}">Ingresar</a>
+	<a th:href="@{/extraer}">Extraer</a>
+	<a th:href="@{/movimientos}">Ver Movimientos</a>
+	<a th:href="@{/transferencia}">Transferencia</a>
+</body>
+</html>
